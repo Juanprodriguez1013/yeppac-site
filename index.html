@@ -727,6 +727,17 @@
       display:flex;
     }
 
+    .btn-whatsapp-mobile{
+      padding:12px 14px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:700;
+      color:#fff;
+      background:#25D366;
+      text-align:center;
+      margin-top:8px;
+    }
+
     @media (max-width: 1100px){
       .hero-grid,
       .about-wrap,
@@ -883,7 +894,7 @@
     <a href="#experiencia" onclick="toggleMenu()">Experiencia</a>
     <a href="#clientes" onclick="toggleMenu()">Clientes</a>
     <a href="#contacto" onclick="toggleMenu()">Contacto</a>
-    <a class="btn btn-primary" href="https://wa.me/593983404294?text=Hola%20YEPPAC%20S.A.%2C%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank">WhatsApp directo</a>
+    <a class="btn-whatsapp-mobile" href="https://wa.me/593983404294?text=Hola%20YEPPAC%20S.A.%2C%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank">WhatsApp</a>
   </div>
   </header>
 
@@ -1164,7 +1175,9 @@
 
 <script>
     function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
     }
   </script>
 </body>
