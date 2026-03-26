@@ -1204,10 +1204,19 @@
 
 <script>
     function toggleMenu() {
+      if (window.innerWidth > 900) return;
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('open');
       document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
     }
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 900) {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
   </script>
 </body>
 </html>
